@@ -44,3 +44,8 @@
     grid-row: -1;
     /* justify-self: end; */
 }
+#backToFentities{
+    margin: 10px;
+    color: #34495e;
+    text-shadow: -1px -1px 0 #ecf0f1, 1px -1px 0 #ecf0f1, -1px 1px 0 #ecf0f1, 1px 1px 0 #ecf0f1;  
+}

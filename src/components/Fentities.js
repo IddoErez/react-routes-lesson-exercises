@@ -4,16 +4,24 @@ import '../styles/fentity-directory.css'
 
 class Fentities extends Component {
     render() {
+        console.log(this.props.state)
+        console.log(this.props.match)
+        const fentitiesCategory = this.props.match.params.fentities
+        console.log(fentitiesCategory)
+        const fentities = this.props.state[fentitiesCategory]
+        console.log(fentities)
         return (
             <div>
-                <h1 id="fentities-title">{/*Get from `match`*/}</h1>
+                <h1 id="fentities-title">{fentitiesCategory}</h1>
                 <div id="fentities-container">
                     {fentities.map(f => {
                         return (
+                            <Link key={f.name} to={`/directory/${fentitiesCategory}/${f.name}`}>
                             <div className="mini">
                                 <img className="directory-img" src={f.imgUrl} alt="" />
-                                <span>{f.name}</span>
+                                <span >{f.name}</span>
                             </div>
+                            </Link>
                         )
                     })}
                 </div>
